@@ -1,0 +1,2 @@
+# SQLCourse
+Intensive MySQL learning
