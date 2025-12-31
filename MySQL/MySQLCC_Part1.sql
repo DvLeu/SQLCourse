@@ -118,3 +118,34 @@ supplier_id int
 );
 
 CREATE INDEX product_supplier_index on product(supplier_id);
+
+-- More Indexes 
+
+CREATE DATABASE pet;
+
+USE pet; 
+
+CREATE TABLE dog 
+(
+dog_id int, 
+dog_name varchar(50),
+owner_id int, 
+breed_id int,
+veterinarian_id int, 
+primary key (dog_id),
+foreign key (owner_id) references owner(owner_id),
+foreign key (breed_id) references breed(breed_id),
+foreign key (veterinarian_id) references veterinarian(veterinarian_id)
+);
+
+-- DROP 
+
+DROP TABLE product;
+
+-- ALTERING
+SHOW TABLES;
+ALTER TABLE customer ADD COLUMN zip varchar(50);
+ALTER TABLE customer DROP COLUMN address;
+ALTER TABLE customer RENAME COLUMN zip to zip_code;
+ALTER TABLE customer RENAME TO valued_customer;
+
