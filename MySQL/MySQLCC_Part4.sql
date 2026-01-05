@@ -86,3 +86,17 @@ CREATE TABLE food
     gluten_free_flag bool
 );
 
+-- Try it yourself
+CREATE DATABASE rapper;
+
+USE rapper;
+
+CREATE TABLE album
+(
+rapper_id int, 
+album_name varchar(100),
+explicit_lyrics_flag boolean,
+album_revenue decimal(12,2),
+album_content longblob,
+primary key(rapper_id)
+);
