@@ -105,11 +105,31 @@ INNER JOIN country as c
 ON (s.country_code = c.country_code);
 
 
+-- Old-School Inner Joins
+
+SELECT  s.subway_system,
+        s.city,
+        c.country
+FROM    subway_system AS s,
+        country AS c
+WHERE   s.country_code = c.country_code;
+
+-- Column Aliasing
+
+SELECT  s.subway_system AS metro,
+        s.city,
+        c.country
+FROM    subway_system AS s
+INNER JOIN country AS c
+ON      s.country_code = c.country_code
+WHERE   c.country_code = 'FR';
 
 
-
-
-
+-- OTHER DATABASE
+-- RESTAURANT DB 
+SELECT * FROM restaurant.main_dish;
+-- SUBWAY DB
+SELECT * FROM subway.subway_system;
 
 
 
