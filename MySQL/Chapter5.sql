@@ -132,10 +132,41 @@ SELECT * FROM restaurant.main_dish;
 SELECT * FROM subway.subway_system;
 
 
+SELECT  s.subway_system,
+        s.city,
+        c.country
+FROM    subway.subway_system AS s
+INNER JOIN location.country AS c
+ON      s.country_code = c.country_code;
 
+-- TRY IT YOURSELF 
 
+USE solar_system;
+SHOW TABLES;
+DESCRIBE planet;
+DESCRIBE ring;
 
+-- EX01
+SELECT p.planet_name,
+r.ring_tot
+FROM solar_system.planet AS p
+INNER JOIN solar_system.ring AS r
+ON p.planet_id = r.planet_id;
+-- EX02
+SELECT p.planet_name,
+r.ring_tot
+FROM solar_system.planet AS p LEFT OUTER JOIN solar_system.ring AS r
+ON p.planet_id = r.planet_id;
 
+-- EX03
+SELECT p.planet_name,
+r.ring_tot
+FROM solar_system.ring as r RIGHT OUTER JOIN solar_system.planet as p
+ON p.planet_id = r.planet_id;
 
-
-
+-- EX04
+SELECT p.planet_name,
+r.ring_tot AS rings
+FROM solar_system.planet AS p
+INNER JOIN solar_system.ring AS r
+ON p.planet_id = r.planet_id;
